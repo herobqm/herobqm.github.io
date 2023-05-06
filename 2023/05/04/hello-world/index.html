@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——Hello BQM | Herobqm的小站</title>
+  <title>我的技术与生活——使用Hexo + Github 搭建个人博客笔记 | Herobqm的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——Hello BQM`
+    document.title = `我的技术与生活——使用Hexo + Github 搭建个人博客笔记`
   </script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -193,7 +193,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Hello BQM","path":"2023/05/04/hello-world/"},{"title":"我家三水的新头像望周知","path":"2023/05/05/text/"}]`)
+  const posts = JSON.parse(`[{"title":"使用Hexo + Github 搭建个人博客笔记","path":"2023/05/04/hello-world/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -327,7 +327,7 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>2 篇</span>
+        <span>1 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
@@ -335,7 +335,7 @@
       </p>
       <p class="main-left--subtitle">
         <span>上线时间：</span>
-        <span>2天</span>
+        <span>3天</span>
       </p>
       <p class="main-left--subtitle">
         <span>当前版本：</span>
@@ -371,7 +371,7 @@ pre:active {
 
 <div class="article-container">
   <div class="article">
-    <h1 class="article-title">Hello BQM</h1>
+    <h1 class="article-title">使用Hexo + Github 搭建个人博客笔记</h1>
     <div class="article-info">
       <div class="article-info--item">
         <div class="article-info--info">
@@ -395,14 +395,16 @@ pre:active {
     <article class="article-content">
       <h1 id="个人博客搭建笔记"><a href="#个人博客搭建笔记" class="headerlink" title="个人博客搭建笔记"></a>个人博客搭建笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在冗杂的信息流里面容易破防，写博客的想法用于防止健忘以及后续回头避坑</p>
 <p>本文就详细介绍下如何使用 Hexo + GitHub 搭建免费个人博客网站的教程。</p>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><h3 id="1-1首先安装nodejs-git-vs"><a href="#1-1首先安装nodejs-git-vs" class="headerlink" title="1.1首先安装nodejs   git    vs"></a>1.1首先安装nodejs   git    vs</h3><h3 id="1-2检验基础环境是否成功安装"><a href="#1-2检验基础环境是否成功安装" class="headerlink" title="1.2检验基础环境是否成功安装"></a>1.2检验基础环境是否成功安装</h3><p>用 <strong>Win + R</strong> 打开运行，输入 <strong>cmd</strong> 并进入cmd</p>
+<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><h3 id="1-1首先安装nodejs-git-vs"><a href="#1-1首先安装nodejs-git-vs" class="headerlink" title="1.1首先安装nodejs   git    vs"></a>1.1首先安装nodejs   git    vs</h3><p>nodejs<a target="_blank" rel="noopener" href="https://nodejs.org/en">下载</a></p>
+<p>git<a target="_blank" rel="noopener" href="https://git-scm.com/">下载</a></p>
+<p>vs[下载](<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a>)</p>
+<p>下载安装都很简单一直next 就可以 在此不多做赘述</p>
+<h3 id="1-2检验基础环境是否成功安装"><a href="#1-2检验基础环境是否成功安装" class="headerlink" title="1.2检验基础环境是否成功安装"></a>1.2检验基础环境是否成功安装</h3><p>用 <strong>Win + R</strong> 打开运行，输入 <strong>cmd</strong> 并进入cmd</p>
 <p><strong>node.js</strong> 的检查</p>
 <pre class="line-numbers language-none"><code class="language-none">node -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>npm</strong> 的检查</p>
-<blockquote>
 <p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题</p>
-</blockquote>
 <pre class="line-numbers language-none"><code class="language-none">npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>Git</strong> 的检查</p>
@@ -420,8 +422,7 @@ C:<span class="token punctuation">\</span>Users<span class="token punctuation">\
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="二、配置nodejs"><a href="#二、配置nodejs" class="headerlink" title="二、配置nodejs"></a>二、配置nodejs</h2><h3 id="2-1创建nodejs文件夹"><a href="#2-1创建nodejs文件夹" class="headerlink" title="2.1创建nodejs文件夹"></a>2.1创建nodejs文件夹</h3><p>在nodejs根目录，创建node_global  和  node_cache文件夹(建议使用下面的命令行方式安装)</p>
-<img src="../imgs/miao/nodejs%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9_2023-05-05_10-22-06.png" alt="创建文件夹" style="zoom: 67%;" />
-
+<p><img src="/nodejs%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9_2023-05-05_10-22-06.png" alt="创建文件夹"></p>
 <p><strong>使用指令安装</strong></p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"># 管理员身份- 打开CMD，配置路径：（注意一定要管理员身份运行CMD！！！路径改成你自己的路径，不要无脑复制！！！）
 npm config set prefix "C:\Program Files\nodejs\node_global"
@@ -434,15 +435,14 @@ npm config set cache "C:\Program Files\nodejs\node_cache"<span aria-hidden="true
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">变量名： NODE_HOME
 变量值：C:\Program Files\nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<img src="../imgs/miao/%E9%85%8D%E7%BD%AEnodejs%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F_2023-05-05_10-39-41.png" alt="添加变量" style="zoom: 80%;" />
-
+<p><img src="/%E9%85%8D%E7%BD%AEnodejs%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F_2023-05-05_10-39-41.png" alt="添加变量"></p>
 <p>系统变量 中 选择 Path 修改和添加如下<strong>属性</strong>：</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">添加属性
 %NODE_HOME%
 %NODE_HOME%\node_global
 %NODE_HOME%\node_cache<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="/../imgs/miao/%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7_2023-05-05_10-42-36.png" alt="添加属性"></p>
+<p><img src="/%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7_2023-05-05_10-42-36.png" alt="添加属性"></p>
 <p><strong>测试</strong></p>
 <p>全局安装最常用的 express 模块 进行测试<br>命令如下:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> express <span class="token parameter variable">-g</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -464,10 +464,10 @@ git config --global user.email "GitHub 邮箱"<span aria-hidden="true" class="li
 <p>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），用记事本打开公钥 id_rsa.pub 文件并复制里面的内容。</p>
 <p>登陆 GitHub ，进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key。</p>
 <p>Title 随便取个名字，粘贴复制的 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。</p>
-<p><img src="/../imgs/miao/ssh%E5%AF%86%E9%92%A5_2023-05-05_11-11-14.png" alt="ssh创建密钥"></p>
+<p><img src="/ssh%E5%AF%86%E9%92%A5_2023-05-05_11-11-14.png" alt="ssh创建密钥"></p>
 <p><strong>验证连接：</strong></p>
 <p>打开 Git Bash，输入 <code>ssh -T git@github.com</code> 出现 “Are you sure……”，输入 yes 回车确认。</p>
-<p><img src="/../imgs/miao/%E9%AA%8C%E8%AF%81%E8%BF%9E%E6%8E%A5_2023-05-05_11-17-56.png" alt="验证连接"></p>
+<p><img src="/%E9%AA%8C%E8%AF%81%E8%BF%9E%E6%8E%A5_2023-05-05_11-17-56.png" alt="验证连接"></p>
 <p>显示 “Hi xxx! You’ve successfully……” 即连接成功。</p>
 <h2 id="四、创建github-pages-仓库"><a href="#四、创建github-pages-仓库" class="headerlink" title="四、创建github pages 仓库"></a>四、创建github pages 仓库</h2><p>GitHub 主页右上角加号 -&gt; New repository：</p>
 <ul>
@@ -476,7 +476,8 @@ git config --global user.email "GitHub 邮箱"<span aria-hidden="true" class="li
 <li><p>勾选 “Initialize this repository with a README”</p>
 </li>
 <li><p>Description 选填</p>
-<img src="../imgs/First%20tutorial/%E5%88%9B%E5%BB%BA%E6%96%B0%E5%82%A8%E5%AD%98%E5%BA%93_2023-05-05_11-24-55.png" alt="创建pages分库"  /></li>
+<p><img src="/%E5%88%9B%E5%BB%BA%E6%96%B0%E5%82%A8%E5%AD%98%E5%BA%93_2023-05-05_11-24-55.png" alt="创建pages分库"></p>
+</li>
 </ul>
 <p>填好后点击 Create repository 创建。</p>
 <p>创建后默认自动启用 HTTPS，博客地址为：<code>https://用户名.github.io</code></p>
@@ -509,7 +510,7 @@ hexo s   # 启动预览<span aria-hidden="true" class="line-numbers-rows"><span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>repository在这里看</p>
-<p><img src="/../imgs/yml%E9%85%8D%E7%BD%AE%E5%9C%B0%E5%9D%80_2023-05-05_13-55-08.png" alt="repository地址"></p>
+<p><img src="/yml%E9%85%8D%E7%BD%AE%E5%9C%B0%E5%9D%80_2023-05-05_13-55-08.png" alt="repository地址"></p>
 <p>完成后运行 <code>hexo d</code> 将网站上传部署到 GitHub Pages。</p>
 <p>完成！这时访问我们的 GitHub 域名 <code>https://用户名.github.io</code> 就可以看到 Hexo 网站了。</p>
 
@@ -535,16 +536,6 @@ hexo s   # 启动预览<span aria-hidden="true" class="line-numbers-rows"><span>
         <h3>目录</h3>
         <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">个人博客搭建笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">一、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E9%A6%96%E5%85%88%E5%AE%89%E8%A3%85nodejs-git-vs"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1首先安装nodejs   git    vs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E6%A3%80%E9%AA%8C%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2检验基础环境是否成功安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E4%BB%A5%E4%B8%8A%E6%9C%89%E6%98%BE%E7%A4%BA%E7%89%88%E6%9C%AC%E5%8F%B7%EF%BC%8C%E5%88%99%E8%AF%B4%E6%98%8E%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.3以上有显示版本号，则说明安装成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AEnodejs"><span class="toc-number">1.3.</span> <span class="toc-text">二、配置nodejs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%88%9B%E5%BB%BAnodejs%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1创建nodejs文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E9%85%8D%E7%BD%AEnodejs%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2配置nodejs环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5github"><span class="toc-number">1.4.</span> <span class="toc-text">三、连接github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%9B%E5%BB%BAgithub-pages-%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">四、创建github pages 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.6.</span> <span class="toc-text">五、安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E4%BD%BF%E7%94%A8-npm-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-Hexo-%E5%8D%9A%E5%AE%A2%E7%A8%8B%E5%BA%8F%EF%BC%9A"><span class="toc-number">1.6.1.</span> <span class="toc-text">5.1使用 npm 一键安装 Hexo 博客程序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2Hexo-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="toc-number">1.6.2.</span> <span class="toc-text">5.2Hexo 初始化和本地预览</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E9%83%A8%E7%BD%B2hexo%E5%88%B0github-pages"><span class="toc-number">1.7.</span> <span class="toc-text">六、部署hexo到github pages</span></a></li></ol></li></ol>
       </div>
-      
-        <div class="catelogue catelogue-2">
-          
-            <p>
-              <span>上一篇：</span>
-              <a href="/2023/05/05/text/">我家三水的新头像望周知</a>
-            </p>
-           
-          
-        </div>
       
     </div>
   </div>
