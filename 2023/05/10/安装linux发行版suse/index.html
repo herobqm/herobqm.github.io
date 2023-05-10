@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="BQM">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="虚拟机中安装（SUSE Linux）一、安装前的准备工作 下载一个VMWare16（下载地址 ：https:&#x2F;&#x2F;www.aliyundrive.com&#x2F;s&#x2F;8M85n3nTVnX） 下载open SUSE的IOS镜像文件（下载地址：openSUSE - Linux OS.系统管理员、开发人员和桌面用户的制作者选择。）  二、安装配置SUSE1.文件-新建虚拟机 2.典型-下一步 3.稍后-下一步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装linux发行版suse">
+<meta property="og:url" content="http://example.com/2023/05/10/%E5%AE%89%E8%A3%85linux%E5%8F%91%E8%A1%8C%E7%89%88suse/index.html">
+<meta property="og:site_name" content="Herobqm的小站">
+<meta property="og:description" content="虚拟机中安装（SUSE Linux）一、安装前的准备工作 下载一个VMWare16（下载地址 ：https:&#x2F;&#x2F;www.aliyundrive.com&#x2F;s&#x2F;8M85n3nTVnX） 下载open SUSE的IOS镜像文件（下载地址：openSUSE - Linux OS.系统管理员、开发人员和桌面用户的制作者选择。）  二、安装配置SUSE1.文件-新建虚拟机 2.典型-下一步 3.稍后-下一步">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/imgs/first/%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BASnipaste_2023-02-16_10-21-15-16836839375121.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%85%B8%E5%9E%8BSnipaste_2023-02-16_10-24-08-16836839736553.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%A8%8D%E5%90%8E%E4%B8%8B%E4%B8%80%E6%AD%A5Snipaste_2023-02-16_10-26-12-16836840178565.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%89%88%E6%9C%ACSnipaste_2023-02-16_10-31-56-16836840421157.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AESnipaste_2023-02-16_10-33-23-16836840605739.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8FSnipaste_2023-02-16_10-36-30-168368407420511.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A1%AC%E4%BB%B6Snipaste_2023-02-16_10-37-50-168368409326913.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%86%85%E5%AD%98Snipaste_2023-02-16_10-52-36.png">
+<meta property="og:image" content="http://example.com/imgs/first/CDSnipaste_2023-02-16_10-54-20-168368413544216.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%BC%80%E5%90%AF%E8%99%9A%E6%8B%9F%E6%9C%BASnipaste_2023-02-16_10-56-07-168368415706318.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8FSnipaste_2023-02-16_10-57-14-168368417005720.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%AD%89%E5%BE%85Snipaste_2023-02-16_11-01-53-168368418948322.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%AD%89%E5%BE%852Snipaste_2023-02-16_11-03-04-168368421783824.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87Snipaste_2023-02-16_11-06-35-168368423913826.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E6%B7%BB%E5%8A%A0%E8%BD%AF%E4%BB%B6%E6%BA%90Snipaste_2023-02-16_11-10-02-168368425427428.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E7%B3%BB%E7%BB%9F%E8%A7%92%E8%89%B2Snipaste_2023-02-16_11-19-58-168368432943430.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E4%B8%93%E5%AE%B6%E5%88%86%E5%8C%BA%E7%A8%8B%E5%BA%8FSnipaste_2023-02-16_13-48-35-168368434691132.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA_2023-02-16_13-55-01-168368437773034.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%88%9B%E5%BB%BA%E5%88%86%E5%8C%BASnipaste_2023-02-16_15-20-34-168368442505636.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BAsda1Snipaste_2023-02-16_15-22-47-168368443570238.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BASnipaste_2023-02-16_15-25-18-168368445415940.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BA2%E7%A1%AE%E8%AE%A4Snipaste_2023-02-16_15-27-02-168368448997642.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BA3Swap%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9FSnipaste_2023-02-16_15-30-31-168368452650244.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BA_%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9FSnipaste_2023-02-16_15-57-56-168368454533046.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%BB%98%E8%AE%A4Snipaste_2023-02-16_15-59-42-168368456673348.png">
+<meta property="og:image" content="http://example.com/imgs/first/sda2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9FSnipaste_2023-02-17_09-32-15-168368457923350.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E6%96%B0%E5%BB%BAhome%E5%88%86%E5%8C%BA5GSnipaste_2023-02-17_09-35-41-168368460959652.png">
+<meta property="og:image" content="http://example.com/imgs/first/home%E6%8C%82%E8%BD%BD1Snipaste_2023-02-16_16-31-58-168368462701354.png">
+<meta property="og:image" content="http://example.com/imgs/first/dev%20sda3%E6%8C%82%E8%BD%BDhomeSnipaste_2023-02-17_09-37-56-168368470177956.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E4%B8%8D%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%AE%BE%E5%A4%87Snipaste_2023-02-17_09-40-29-168368474934958.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%88%86%E9%85%8D%E5%AE%8C%E6%88%90Snipaste_2023-02-17_09-41-36-168368480902960.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%88%86%E9%85%8D%E5%AE%8C%E6%88%902Snipaste_2023-02-17_09-42-51-168368481558062.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4Snipaste_2023-02-17_09-46-28-168368483869264.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7Snipaste_2023-02-17_09-49-26-168368485912866.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E8%B7%B3%E8%BF%87Snipaste_2023-02-17_09-53-42-168368488872868.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E8%B7%B3%E8%BF%87%20%E5%88%9B%E5%BB%BAroot%E7%94%A8%E6%88%B7Snipaste_2023-02-17_09-52-12-168368491404170.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AESnipaste_2023-02-17_09-55-23-168368494982472.png">
+<meta property="og:image" content="http://example.com/imgs/first/%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85Snipaste_2023-02-17_10-01-36-168368497705874.png">
+<meta property="article:published_time" content="2023-05-10T01:57:10.000Z">
+<meta property="article:modified_time" content="2023-05-10T02:18:12.395Z">
+<meta property="article:author" content="BQM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/imgs/first/%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BASnipaste_2023-02-16_10-21-15-16836839375121.png">
+  
+  
+  
+  <title>安装linux发行版suse - Herobqm的小站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="安装linux发行版suse"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-10 09:57" pubdate>
+          2023年5月10日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">安装linux发行版suse</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="虚拟机中安装（SUSE-Linux）"><a href="#虚拟机中安装（SUSE-Linux）" class="headerlink" title="虚拟机中安装（SUSE Linux）"></a>虚拟机中安装（SUSE Linux）</h3><h2 id="一、安装前的准备工作"><a href="#一、安装前的准备工作" class="headerlink" title="一、安装前的准备工作"></a>一、安装前的准备工作</h2><ol>
+<li>下载一个VMWare16（下载地址 ：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/8M85n3nTVnX%EF%BC%89">https://www.aliyundrive.com/s/8M85n3nTVnX）</a></li>
+<li>下载open SUSE的IOS镜像文件（下载地址：<a target="_blank" rel="noopener" href="https://www.opensuse.org/">openSUSE - Linux OS.系统管理员、开发人员和桌面用户的制作者选择。</a>）</li>
+</ol>
+<h2 id="二、安装配置SUSE"><a href="#二、安装配置SUSE" class="headerlink" title="二、安装配置SUSE"></a>二、安装配置SUSE</h2><h3 id="1-文件-新建虚拟机"><a href="#1-文件-新建虚拟机" class="headerlink" title="1.文件-新建虚拟机"></a>1.文件-新建虚拟机</h3><p><img src="/../imgs/first/%E6%96%87%E4%BB%B6%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BASnipaste_2023-02-16_10-21-15-16836839375121.png" srcset="/img/loading.gif" lazyload alt="文件-新建虚拟机"></p>
+<h3 id="2-典型-下一步"><a href="#2-典型-下一步" class="headerlink" title="2.典型-下一步"></a>2.典型-下一步</h3><p><img src="/../imgs/first/%E5%85%B8%E5%9E%8BSnipaste_2023-02-16_10-24-08-16836839736553.png" srcset="/img/loading.gif" lazyload alt="典型下一步"></p>
+<h3 id="3-稍后-下一步"><a href="#3-稍后-下一步" class="headerlink" title="3.稍后-下一步"></a>3.稍后-下一步</h3><p><img src="/../imgs/first/%E7%A8%8D%E5%90%8E%E4%B8%8B%E4%B8%80%E6%AD%A5Snipaste_2023-02-16_10-26-12-16836840178565.png" srcset="/img/loading.gif" lazyload alt="稍后"></p>
+<h3 id="4-选择版本-下一步"><a href="#4-选择版本-下一步" class="headerlink" title="4.选择版本-下一步"></a>4.选择版本-下一步</h3><p><img src="/../imgs/first/%E7%89%88%E6%9C%ACSnipaste_2023-02-16_10-31-56-16836840421157.png" srcset="/img/loading.gif" lazyload alt="选择版本"></p>
+<h3 id="5-选择存放位置-下一步"><a href="#5-选择存放位置-下一步" class="headerlink" title="5.选择存放位置-下一步"></a>5.选择存放位置-下一步</h3><p><img src="/../imgs/first/%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AESnipaste_2023-02-16_10-33-23-16836840605739.png" srcset="/img/loading.gif" lazyload alt="选择存放位置"></p>
+<h3 id="6-设置磁盘大小-下一步"><a href="#6-设置磁盘大小-下一步" class="headerlink" title="6.设置磁盘大小-下一步"></a>6.设置磁盘大小-下一步</h3><p><img src="/../imgs/first/%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8FSnipaste_2023-02-16_10-36-30-168368407420511.png" srcset="/img/loading.gif" lazyload alt="磁盘大小"></p>
+<h3 id="7-自定义硬件"><a href="#7-自定义硬件" class="headerlink" title="7.自定义硬件"></a>7.自定义硬件</h3><p><img src="/../imgs/first/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A1%AC%E4%BB%B6Snipaste_2023-02-16_10-37-50-168368409326913.png" srcset="/img/loading.gif" lazyload alt="自定义硬件"></p>
+<h3 id="8-自定义硬件-自定义内存"><a href="#8-自定义硬件-自定义内存" class="headerlink" title="8.自定义硬件-自定义内存"></a>8.自定义硬件-自定义内存</h3><p><img src="/../imgs/first/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%86%85%E5%AD%98Snipaste_2023-02-16_10-52-36.png" srcset="/img/loading.gif" lazyload alt="自定义内存"></p>
+<h3 id="9-自定义-镜像源"><a href="#9-自定义-镜像源" class="headerlink" title="9.自定义-镜像源"></a>9.自定义-镜像源</h3><p><img src="/../imgs/first/CDSnipaste_2023-02-16_10-54-20-168368413544216.png" srcset="/img/loading.gif" lazyload alt="CD"></p>
+<h2 id="三、10-开启虚拟机"><a href="#三、10-开启虚拟机" class="headerlink" title="三、10.开启虚拟机"></a>三、10.开启虚拟机</h2><p><img src="/../imgs/first/%E5%BC%80%E5%90%AF%E8%99%9A%E6%8B%9F%E6%9C%BASnipaste_2023-02-16_10-56-07-168368415706318.png" srcset="/img/loading.gif" lazyload alt="开启虚拟机"></p>
+<h3 id="11-安装镜像-Installation"><a href="#11-安装镜像-Installation" class="headerlink" title="11.安装镜像 -Installation"></a>11.安装镜像 -Installation</h3><p><img src="/../imgs/first/%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8FSnipaste_2023-02-16_10-57-14-168368417005720.png" srcset="/img/loading.gif" lazyload alt="安装镜像"></p>
+<p><img src="/../imgs/first/%E7%AD%89%E5%BE%85Snipaste_2023-02-16_11-01-53-168368418948322.png" srcset="/img/loading.gif" lazyload alt="等待"></p>
+<p><img src="/../imgs/first/%E7%AD%89%E5%BE%852Snipaste_2023-02-16_11-03-04-168368421783824.png" srcset="/img/loading.gif" lazyload alt="等待2"></p>
+<h3 id="12-语言选择简体中文-下一步"><a href="#12-语言选择简体中文-下一步" class="headerlink" title="12.语言选择简体中文-下一步"></a>12.语言选择简体中文-下一步</h3><p><img src="/../imgs/first/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87Snipaste_2023-02-16_11-06-35-168368423913826.png" srcset="/img/loading.gif" lazyload alt="简体中文"></p>
+<p>出现YaST2在线选择源之后 选择yes</p>
+<p>添加软件源</p>
+<p><img src="/../imgs/first/%E6%B7%BB%E5%8A%A0%E8%BD%AF%E4%BB%B6%E6%BA%90Snipaste_2023-02-16_11-10-02-168368425427428.png" srcset="/img/loading.gif" lazyload alt="添加软件源"></p>
+<h3 id="13-选择系统角色-服务器-下一步"><a href="#13-选择系统角色-服务器-下一步" class="headerlink" title="13.选择系统角色-服务器-下一步"></a>13.选择系统角色-服务器-下一步</h3><p><img src="/../imgs/first/%E7%B3%BB%E7%BB%9F%E8%A7%92%E8%89%B2Snipaste_2023-02-16_11-19-58-168368432943430.png" srcset="/img/loading.gif" lazyload alt="服务器"></p>
+<p>14.建议分区-专家分区程序-从当前提案开始</p>
+<p><img src="/../imgs/first/%E4%B8%93%E5%AE%B6%E5%88%86%E5%8C%BA%E7%A8%8B%E5%BA%8FSnipaste_2023-02-16_13-48-35-168368434691132.png" srcset="/img/loading.gif" lazyload alt="专家分区程序"></p>
+<p>选择之后等待</p>
+<p>删除 &#x2F;dev&#x2F;sda 中的所有分区，默认采用Btrfs，我们修改成LVM分区+XFS文件系统</p>
+<p><img src="/../imgs/first/%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA_2023-02-16_13-55-01-168368437773034.png" srcset="/img/loading.gif" lazyload alt="删除分区"></p>
+<h3 id="14-sda-添加分区"><a href="#14-sda-添加分区" class="headerlink" title="14.sda-添加分区"></a>14.sda-添加分区</h3><p>以 <strong>从现有分区开始</strong> 为例。根据以往的经验，安装 Linux 至少需要三个分区：根目录、交换空间 和 EFI 。在 openSUSE Leap 15.3 alpha 中，Leap 开始采用和 Tumbleweed 相同的 btrfs 分卷，这意味着你无需为不知某个分区应该占用多少的空间而烦恼不已。所有的分区以子卷的形式合并到一起，形成一个主分区，各个分区大小为动态分配，会消耗殆尽的是主分区总剩余可用空间。所以你所需要创建的是三个分区：交换空间、根目录、以及<strong>EFI(&#x2F;boot&#x2F;efi)</strong></p>
+<h4 id="sda1交换区"><a href="#sda1交换区" class="headerlink" title="sda1交换区"></a>sda1交换区</h4><p>首先需要先创建 <strong>交换分区</strong>（或者你可以先创建 EFI 。） ，请先点击你要创建分区的磁盘，例如下图中的 &#x2F;dev&#x2F;sda ，点击下方的 添加分区</p>
+<p><img src="/../imgs/first/%E5%88%9B%E5%BB%BA%E5%88%86%E5%8C%BASnipaste_2023-02-16_15-20-34-168368442505636.png" srcset="/img/loading.gif" lazyload alt="创建分区"></p>
+<p>然后选择自定义尺寸，并在下方输入 2（openSUSE 默认方案中，交换分区为 2 GB）：</p>
+<p><img src="/../imgs/first/%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BAsda1Snipaste_2023-02-16_15-22-47-168368443570238.png" srcset="/img/loading.gif" lazyload alt="添加分区sda1"></p>
+<p>点击下一步，并选择 <strong>交换区</strong> ，然后点击下一步<img src="/../imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BASnipaste_2023-02-16_15-25-18-168368445415940.png" srcset="/img/loading.gif" lazyload alt="交换区sda1"></p>
+<p>检查分区 ID、文件系统和挂载点是否与下图一致，然后点击下一步：</p>
+<p><img src="/../imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BA2%E7%A1%AE%E8%AE%A4Snipaste_2023-02-16_15-27-02-168368448997642.png" srcset="/img/loading.gif" lazyload alt="sda2—交换区"></p>
+<p>这样我们就创建了第一个分区：</p>
+<p><img src="/../imgs/first/sda1_%E4%BA%A4%E6%8D%A2%E5%8C%BA3Swap%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9FSnipaste_2023-02-16_15-30-31-168368452650244.png" srcset="/img/loading.gif" lazyload alt="sda1—交换区Swap添加成功"></p>
+<h4 id="sda2默认操作系统（-x2F-根）"><a href="#sda2默认操作系统（-x2F-根）" class="headerlink" title="sda2默认操作系统（&#x2F; 根）"></a>sda2默认操作系统（&#x2F; 根）</h4><p>依照同样的方法，你需要再创建一个根目录（注意，创建根目录时，请将分区的角色选择为 <strong>操作系统</strong> ）：</p>
+<p><img src="/../imgs/first/sda%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BA_%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9FSnipaste_2023-02-16_15-57-56-168368454533046.png" srcset="/img/loading.gif" lazyload alt="sda添加分区操作系统"></p>
+<p>新建的根分区默认启用了 btrfs 子卷</p>
+<p><img src="/../imgs/first/sda%E6%B7%BB%E5%8A%A0%E5%88%86%E5%8C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%BB%98%E8%AE%A4Snipaste_2023-02-16_15-59-42-168368456673348.png" srcset="/img/loading.gif" lazyload alt="默认"></p>
+<p><img src="/../imgs/first/sda2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9FSnipaste_2023-02-17_09-32-15-168368457923350.png" srcset="/img/loading.gif" lazyload alt="sda2添加操作系统成功"></p>
+<h3 id="创建独立的-x2F-home-分区"><a href="#创建独立的-x2F-home-分区" class="headerlink" title="创建独立的 &#x2F;home 分区"></a>创建独立的 &#x2F;home 分区</h3><p>1：你需要点击根分区（也就是上图中的 sda2 ，因为之前新建的分区占据了全部的空间），再点击下方的删除。本文所用到的演示机的虚拟硬盘大小为 50 GB，笔者假定需要创建一个大小为 5 GB，独立的 &#x2F;home 分区。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">TIP：<br>如果你在其他硬盘上有预留剩余的空间来创建 /home 分区，那么你无需删除现有的根目录分区，只需要展开根目录的列表，找到 **@/home** ，点击下方的删除，然后再依照下文创建 /home 分区。<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>重新创建home分区</strong></p>
+<p>2：点击你需要创建 &#x2F;home 的磁盘（例如 &#x2F;dev&#x2F;sda），再点击下方的添加分区，</p>
+<p>​	2.1：在新分区大小中，选择自定义，并输入 5GiB；</p>
+<p>​	2.2：点击下一步，分区角色选择数据和ISV软件；点击下一步，</p>
+<p>​	 2.3：点击挂载点下方的方框，选择 &#x2F;home ，然后点击下一步：</p>
+<p><img src="/../imgs/first/%E6%96%B0%E5%BB%BAhome%E5%88%86%E5%8C%BA5GSnipaste_2023-02-17_09-35-41-168368460959652.png" srcset="/img/loading.gif" lazyload alt="新建home分区5G"></p>
+<p>这样你就有了一个独立的 &#x2F;home 分区</p>
+<p>然后再依照前文的描述创建新的根分区（当然你也可以颠倒整个过程，但请牢记所需创建的根目录与家目录的大小）：</p>
+<h3 id="挂载已有的-x2F-home-分区"><a href="#挂载已有的-x2F-home-分区" class="headerlink" title="挂载已有的 &#x2F;home 分区"></a>挂载已有的 &#x2F;home 分区</h3><p>首先，依照上文的步骤删除根目录分区的家目录（@&#x2F;home），然后假定笔者的演示机曾经有安装过其他的 Linux ，并遗留了一个大小为 5 GB 的分区（&#x2F;home）：</p>
+<p><img src="/../imgs/first/home%E6%8C%82%E8%BD%BD1Snipaste_2023-02-16_16-31-58-168368462701354.png" srcset="/img/loading.gif" lazyload alt="home挂载1"></p>
+<p>点击该分区（图中的 <strong>&#x2F;dev&#x2F;sda3</strong>），然后点击右下方的 edit，然后点击挂载设备，并将挂载点指定为 &#x2F;home，点击下一步（注意在编辑分区的时候，</p>
+<p><img src="/../imgs/first/dev%20sda3%E6%8C%82%E8%BD%BDhomeSnipaste_2023-02-17_09-37-56-168368470177956.png" srcset="/img/loading.gif" lazyload alt="sda3挂载"></p>
+<p>请点击 <strong>格式化设备</strong> 下方的 <strong>不格式化设备</strong>，以免数据因为操作失误而被格式化）：</p>
+<p><img src="/../imgs/first/%E4%B8%8D%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%AE%BE%E5%A4%87Snipaste_2023-02-17_09-40-29-168368474934958.png" srcset="/img/loading.gif" lazyload alt="不格式化设备"></p>
+<p><img src="/../imgs/first/%E5%88%86%E9%85%8D%E5%AE%8C%E6%88%90Snipaste_2023-02-17_09-41-36-168368480902960.png" srcset="/img/loading.gif" lazyload alt="分配完成1"></p>
+<p><img src="/../imgs/first/%E5%88%86%E9%85%8D%E5%AE%8C%E6%88%902Snipaste_2023-02-17_09-42-51-168368481558062.png" srcset="/img/loading.gif" lazyload alt="分配完成2"></p>
+<h3 id="设置时间"><a href="#设置时间" class="headerlink" title="设置时间"></a>设置时间</h3><p>接下来，您需要设定在地图上显示的时区。您可以点击地图上的国家来选择时区，或者使用下拉菜单来选择时区。</p>
+<p>openSUSE 会自动检测已安装的系统，如果你是计划成为 win&#x2F;openSUSE 双系统用户，并且预先安装了 windows ，openSUSE 会自动取消勾选设置系统时间为 UTC 调整世界时。如果没有安装双系统的话（因为视窗系统不使用 UTC 时间），也可以把系统时间设定到 UTC 调整世界时。</p>
+<p><img src="/../imgs/first/%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4Snipaste_2023-02-17_09-46-28-168368483869264.png" srcset="/img/loading.gif" lazyload alt="设置时间"></p>
+<h3 id="创建主要用户"><a href="#创建主要用户" class="headerlink" title="创建主要用户"></a>创建主要用户</h3><p>输入您的全名，openSUSE 会自动为您选择一个用户名，不满意的话也可以自己修改。指定一个新密码，并输入两次确认。系统会默认使用该密码作为系统管理员（也就是 <strong>root</strong> 根用户）的密码。同样，自动登录也是默认开启的。然而，如果您想要让系统更安全一些，或者安装的将是一个多用户系统，也可以取消自动登录。</p>
+<p><img src="/../imgs/first/%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7Snipaste_2023-02-17_09-49-26-168368485912866.png" srcset="/img/loading.gif" lazyload alt="创建用户"></p>
+<h3 id="设置根用户密码（可选）"><a href="#设置根用户密码（可选）" class="headerlink" title="设置根用户密码（可选）"></a>设置根用户密码（可选）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">如果你跳过了用户创建，那你必须创建一个系统管理员密码<br></code></pre></td></tr></table></figure>
+
+
+
+<p>如果在前一屏中您取消选中了 <strong>对系统管理员使用此口令</strong> 选项，接下来你得为根用户 <strong>Root</strong> 提供它的认证口令（密码）。</p>
+<p><img src="/../imgs/first/%E8%B7%B3%E8%BF%87Snipaste_2023-02-17_09-53-42-168368488872868.png" srcset="/img/loading.gif" lazyload alt="跳过"></p>
+<p><img src="/../imgs/first/%E8%B7%B3%E8%BF%87%20%E5%88%9B%E5%BB%BAroot%E7%94%A8%E6%88%B7Snipaste_2023-02-17_09-52-12-168368491404170.png" srcset="/img/loading.gif" lazyload alt="跳过 创建root用户"></p>
+<p>在本例中使用了一个简单密码，YaST 会对这种过于简单的密码做出警示。</p>
+<h2 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h2><p>这里是 YaST 将要对你的磁盘做什么事情的一个概览。请通读一遍列表，如果您想要改动任何一个选项，可以通过点击那个章节的标题来实现。你可以通过 YaST 的帮助文本来了解每个选项的意思。</p>
+<p><img src="/../imgs/first/%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AESnipaste_2023-02-17_09-55-23-168368494982472.png" srcset="/img/loading.gif" lazyload alt="安装设置"></p>
+<p>执行安装</p>
+<p><img src="/../imgs/first/%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85Snipaste_2023-02-17_10-01-36-168368497705874.png" srcset="/img/loading.gif" lazyload alt="执行安装"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>安装linux发行版suse</div>
+      <div>http://example.com/2023/05/10/安装linux发行版suse/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>BQM</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/09/cnetos7%E4%B8%8B%E5%AE%89%E8%A3%85mysql8-0-32/" title="cnetos7下安装mysql8.0.32">
+                        <span class="hidden-mobile">cnetos7下安装mysql8.0.32</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
